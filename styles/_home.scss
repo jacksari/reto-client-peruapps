@@ -287,7 +287,7 @@ Login page
           gap: 1rem;
           @media screen and (min-width: 700px) {
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
           }
           .form-btn{
             display: flex;
@@ -332,6 +332,7 @@ Login page
         border-bottom: 2px solid $--grey-300;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
+        flex-direction: row;
         p{
           font-size: 24px;
 

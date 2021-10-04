@@ -19,11 +19,11 @@ function RegisterAuth() {
         validationSchema: Yup.object({
             name: Yup.string().required('El nombre es obligatorio'),
             lastname: Yup.string().required('El apellido es obligatorio'),
-            email: Yup.string().required('El email es obligatorio'),
+            email: Yup.string().required('El email es obligatorio').email('Debe ingresar un email válido'),
             password: Yup.string().required('El password es obligatorio').min(6,'El password debe contener al menos 6 caracteres'),
             birthday: Yup.string().required('El cumpleaños es obligatorio'),
             place: Yup.string().required('La sede es obligatorio'),
-            phone: Yup.string().required('El celular es obligatorio'),
+            phone: Yup.string().required('El celular es obligatorio').matches(/^\+519([0-9]{8})$/, 'Debe ser un número válido Ejm. (+51944825449)'),
         }),
         onSubmit: (valores) => {
             //console.log('enviando form', valores)
