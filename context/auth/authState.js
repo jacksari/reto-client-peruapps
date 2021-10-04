@@ -70,7 +70,7 @@ const AuthState = ({children}) => {
         })
         try {
             const resp = await clienteAxios.post('/api/v1/auth/login', datos);
-            //console.log(resp.data)
+            console.log(resp.data)
             dispatch({
                 type: LOGIN_USUARIO_EXITOSO,
                 payload: resp.data.token

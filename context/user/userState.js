@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import {
-    GET_USUARIOS
+    GET_USUARIOS, SELECT_USER
 
 } from "../types";
 import clienteAxios from "../../config/axios";
@@ -53,6 +53,12 @@ const UserState = ({children}) => {
         }
     }
 
+    const selectUser = (user) =>{
+        dispatch({
+            type: SELECT_USER,
+            payload: user
+        })
+    }
 
 
 
@@ -72,6 +78,7 @@ const UserState = ({children}) => {
                 message: state.message,
                 userSelect: state.userSelect,
                 getUsuarios,
+                selectUser
             }}
         >
             {children}

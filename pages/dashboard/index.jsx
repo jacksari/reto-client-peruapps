@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import UserItem from "../../components/user/UserItem";
 import userContext from "../../context/user/userContext";
+import ModalUserView from "../../components/user/ModalUserView";
 
 function Index() {
-    const { getUsuarios, usuarios } = useContext(userContext)
+    const { getUsuarios, usuarios, userSelect, selectUser } = useContext(userContext)
     useEffect(() => {
         getUsuarios()
     }, []);
@@ -21,7 +22,9 @@ function Index() {
                     ))
                 }
             </div>
+            <ModalUserView/>
         </Layout>
+
     );
 }
 

@@ -1,11 +1,16 @@
 import {
-    GET_USUARIOS,
+    GET_USUARIOS, SELECT_USER,
 
 } from "../types";
 
 const userReducer = (state,action) => {
     switch (action.type) {
 
+        case SELECT_USER:
+            return {
+                ...state,
+                userSelect: action.payload
+            }
         case GET_USUARIOS:
             console.log(action)
             let pages = []
