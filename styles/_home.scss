@@ -29,7 +29,10 @@ Login page
     }
     .container-form{
       background: $--clr-white;
-      padding: 3rem;
+      padding: 3rem 1.5rem;
+      @media screen and (min-width: 500px) {
+          padding: 3rem;
+      }
       .form-group{
         display: flex;
         flex-direction: column;
@@ -61,15 +64,21 @@ Login page
 
 .page-dashboard{
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr;
   height: 100vh;
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 1fr 4fr;
+  }
  .sidebar{
    height: 100%;
    background: $--clr-primary-5;
    padding: 2rem 0;
-   display: flex;
    flex-direction: column;
    justify-content: space-between;
+   display: none;
+   @media screen and (min-width: 600px) {
+       display: flex;
+   }
    h2{
      font-size: 20px;
      text-align: center;
@@ -119,19 +128,76 @@ Login page
    }
  }
   .content{
-    padding: 2rem;
+    padding: 1rem;
+    @media screen and (min-width: 600px) {
+        padding: 2rem;
+    }
     .header{
       padding-bottom: 1rem;
       border-bottom: 2px solid $--grey-300;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      @media screen and (min-width: 700px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
       .info{
 
       }
       .user{
         display: flex;
         align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        .sidebar-mobile{
+          position: absolute;
+          top: 110%;
+          left: 0;
+          width: 80%;
+          background: #fff;
+          padding: 1rem;
+          box-shadow: $--shadow-2;
+          flex-direction: column;
+          display: none;
+          border-radius: 10px;
+          transition: $--transition;
+          a{
+            font-size: 16px;
+            color: #551a8b;
+            font-weight: 500;
+            margin: .2rem 0;
+          }
+          .btn{
+            margin: .2rem 0;
+            width: auto;
+            padding: .2rem;
+          }
+        }
+        .active{
+          display: flex;
+        }
+        .menu{
+          color: $--clr-primary-5;
+          font-size: 24px;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          @media screen and (min-width: 600px) {
+              display: none;
+          }
+          p{
+            margin-left: .5rem;
+            font-size: 16px;
+          }
+          i{
+            cursor: pointer;
+            transition: $--transition;
+            &:hover{
+              transform: scale(1.1);
+            }
+          }
+        }
         .name{
           text-align: right;
           display: flex;
@@ -153,8 +219,20 @@ Login page
       margin-top: 2rem;
       .list-users{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        @media screen and (min-width: 500px) {
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+        @media screen and (min-width: 860px) {
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 1.5rem;
+        }
+        @media screen and (min-width: 1000px) {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 2rem;
+        }
         .user-item{
           margin-top: 4rem;
           background: $--clr-white;
@@ -205,8 +283,12 @@ Login page
       .create-user{
         form{
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          @media screen and (min-width: 700px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+          }
           .form-btn{
             display: flex;
             justify-content: flex-end;
@@ -232,7 +314,10 @@ Login page
   justify-content: center;
   visibility: hidden;
   .section-center{
-    width: 400px;
+    width: 280px;
+    @media screen and (min-width: 600px) {
+        width: 400px;
+    }
     .box{
       background: $--clr-white;
       border-radius: 30px;
