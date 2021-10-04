@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   env: {
-    backendURL:'http://localhost:5000',
+    backendURL:'http://www.api.jacksari.com/',
   }
 }
